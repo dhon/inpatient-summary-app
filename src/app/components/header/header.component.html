@@ -1,3 +1,11 @@
 <p>
-  Header Component
+  <span class="pr-2">Header Component</span>
+  <a [routerLink]="['/']" class="pr-2">Home</a>
+  <ng-container *ngIf="isLoggedIn$ | async; else notLoggedIn">
+    <a (click)="logout()" class="pr-2">Logout</a>
+    <a [routerLink]="['/team']">Team</a>
+  </ng-container>
+  <ng-template #notLoggedIn>
+    <a [routerLink]="['/login']">Login</a>
+  </ng-template>  
 </p>

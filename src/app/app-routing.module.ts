@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { TeamComponent } from './components/team/team.component';
+import { HomeComponent } from '@app/components/home/home.component';
+import { LoginComponent } from '@app/components/login/login.component';
+import { PageNotFoundComponent } from '@app/components/page-not-found/page-not-found.component';
+import { TeamComponent } from '@app/components/team/team.component';
+import { AuthGuard } from '@app/helpers';
 
 const routes: Routes = [
   {
@@ -11,9 +13,15 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    component: LoginComponent,
+    pathMatch: 'full'
+  },
+  {
     path: 'team',
     component: TeamComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuard]
   },
   {
     path: '404',
