@@ -1,11 +1,15 @@
 <p>
   <span class="pr-2">Header Component</span>
-  <a [routerLink]="['/']" class="pr-2">Home</a>
   <ng-container *ngIf="isLoggedIn$ | async; else notLoggedIn">
     <a (click)="logout()" class="pr-2">Logout</a>
-    <a [routerLink]="['/team']">Team</a>
+    <a [routerLink]="['/']" class="pr-2">Home</a>
+    <a [routerLink]="['/care-team']">Care Team</a>
+    <a [routerLink]="['/lab-results']">Lab Results</a>
+    <a [routerLink]="['/patient-education']">Patient Education</a>
+    <a [routerLink]="['/ask-a-question']">Ask a Question</a>
   </ng-container>
   <ng-template #notLoggedIn>
     <a [routerLink]="['/login']">Login</a>
   </ng-template>
+  <a [routerLink]="['/contact-information']">Contact Information</a>
 </p>
