@@ -1,12 +1,47 @@
 import { Injectable } from "@angular/core";
 import { charitaAdams, geoffreyAbbott, omarAbernathy } from "@assets/index";
 import { AuthenticationService } from "@app/services";
+import * as FHIR from "fhirclient";
 
 @Injectable({
   providedIn: "root",
 })
 export class FhirService {
-  constructor(private authenticationService: AuthenticationService) {}
+  private patient = null;
+  private observation = null;
+  private medicationRequest = null;
+
+  constructor(private authenticationService: AuthenticationService) {
+    // Launch Page
+    FHIR.oauth2.authorize({
+      client_id: "my_web_app",
+      scope: "patient/*.read",
+    });
+
+    // Index Page
+    FHIR.oauth2
+      .ready()
+      .then((client) => client.request("Patient"))
+      .then((data) => (this.patient = data))
+      .then((data) => console.log("patient", this.patient))
+      .catch(console.error);
+
+    // Index Page
+    FHIR.oauth2
+      .ready()
+      .then((client) => client.request("Observation"))
+      .then((data) => (this.observation = data))
+      .then((data) => console.log("observation", this.observation))
+      .catch(console.error);
+
+    // Index Page
+    FHIR.oauth2
+      .ready()
+      .then((client) => client.request("MedicationRequest"))
+      .then((data) => (this.medicationRequest = data))
+      .then((data) => console.log("medicationRequest", this.medicationRequest))
+      .catch(console.error);
+  }
 
   getData() {
     if (this.authenticationService.currentUserValue.id === 1) {
