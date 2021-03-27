@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { charitaAdams, geoffreyAbbott, omarAbernathy } from "@assets/index";
-import { AuthenticationService } from "@app/services";
 import * as FHIR from "fhirclient";
 
 @Injectable({
@@ -11,7 +10,7 @@ export class FhirService {
   private observation = null;
   private medicationRequest = null;
 
-  constructor(private authenticationService: AuthenticationService) {
+  constructor() {
     // Launch Page
     FHIR.oauth2.authorize({
       client_id: "my_web_app",
@@ -44,14 +43,7 @@ export class FhirService {
   }
 
   getData() {
-    if (this.authenticationService.currentUserValue.id === 1) {
-      return charitaAdams;
-    } else if (this.authenticationService.currentUserValue.id === 2) {
-      return geoffreyAbbott;
-    } else if (this.authenticationService.currentUserValue.id === 3) {
-      return omarAbernathy;
-    }
-    return null;
+    return charitaAdams;
   }
 
   getName() {
