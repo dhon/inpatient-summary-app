@@ -14,10 +14,24 @@ import { User } from "@app/models";
 const users: User[] = [
   {
     id: 1,
-    username: "test",
-    password: "test",
-    firstName: "John",
-    lastName: "Smith",
+    username: "charita",
+    password: "adams",
+    firstName: "Charita",
+    lastName: "Adams",
+  },
+  {
+    id: 2,
+    username: "geoffrey",
+    password: "abbot",
+    firstName: "Geoffrey",
+    lastName: "Abbot",
+  },
+  {
+    id: 3,
+    username: "omar",
+    password: "abernathy",
+    firstName: "Omar",
+    lastName: "Abernathy",
   },
 ];
 

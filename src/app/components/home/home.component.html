@@ -1,1 +1,99 @@
-<p>Home Component</p>
+<div class="grid-container">
+  <div class="card text-white text-center bg-dark mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Welcome, {{ name }} !</h5>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col col-12 col-md-3">
+    <div class="grid-container">
+      <div class="card text-white text-center bg-dark mb-3">
+        <div class="card-header">Language</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ language }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col col-12 col-md-6">
+    <div class="grid-container">
+      <div class="card text-white text-center bg-dark mb-3">
+        <div class="card-header">Address</div>
+        <div class="card-body">
+          <h5 class="card-title">
+            <ng-container *ngFor="let line of address?.line">
+              {{ line }},<br />
+            </ng-container>
+            {{ address?.city }}, {{ address?.state }}, {{ address?.postalCode }}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col col-12 col-md-3">
+    <div class="grid-container">
+      <div class="card text-white text-center bg-dark mb-3">
+        <div class="card-header">Phone Number</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ phoneNumber }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col col-12 col-md-6">
+    <div class="grid-container">
+      <div class="card text-white text-center bg-dark mb-3">
+        <div class="card-header">Date of Birth</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ dateOfBirth }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col col-12 col-md-6">
+    <div class="grid-container">
+      <div class="card text-white text-center bg-dark mb-3">
+        <div class="card-header">Gender</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ gender }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col col-12 col-md-6">
+    <div class="grid-container">
+      <div class="card text-white text-center bg-dark mb-3">
+        <div class="card-header">Height</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ height }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col col-12 col-md-6">
+    <div class="grid-container">
+      <div class="card text-white text-center bg-dark mb-3">
+        <div class="card-header">Weight</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ weight }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col col-12 col-md-12">
+    <div class="grid-container">
+      <div class="card text-white text-center bg-dark mb-3">
+        <div class="card-header">Medication Requests</div>
+        <div class="card-body">
+          <h5 class="card-title">
+            <ng-container *ngFor="let medication of medicationRequests">
+              {{ medication }}<br />
+            </ng-container>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
