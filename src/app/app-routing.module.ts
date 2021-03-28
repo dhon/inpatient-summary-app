@@ -5,6 +5,7 @@ import { CareTeamComponent } from "@app/components/care-team/care-team.component
 import { ContactInformationComponent } from "@app/components/contact-information/contact-information.component";
 import { HomeComponent } from "@app/components/home/home.component";
 import { LabResultsComponent } from "@app/components/lab-results/lab-results.component";
+import { LaunchComponent } from "@app/components/launch/launch.component";
 import { PageNotFoundComponent } from "@app/components/page-not-found/page-not-found.component";
 import { PatientEducationComponent } from "@app/components/patient-education/patient-education.component";
 
@@ -32,6 +33,11 @@ const routes: Routes = [
   {
     path: "lab-results",
     component: LabResultsComponent,
+    pathMatch: "full",
+  },
+  {
+    path: "launch",
+    component: LaunchComponent,
     pathMatch: "full",
   },
   {
