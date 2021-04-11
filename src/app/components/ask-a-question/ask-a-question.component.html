@@ -1,1 +1,40 @@
-<p>Ask a Question Component</p>
+<div class="grid-container">
+  <div class="card text-white text-center bg-dark mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Ask A Question to your Medical Team</h5>
+      <div>Have a question regarding your stay?</div>
+      <div>Our professional care team is happy to help.</div>
+      <div>We will promptly get back to you.</div>
+    </div>
+  </div>
+</div>
+<div class="grid-container">
+  <div class="card text-white text-center bg-dark mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Enter your Question Here.</h5>
+      <form class="mt-2">
+        <div class="col-md-4 offset-md-4 mb-3">
+          <select class="custom-select" required>
+            <option selected>Select a Topic</option>
+            <option value="1">Question About Care</option>
+            <option value="2">Question about Doctor</option>
+            <option value="3">Question about facility</option>
+            <option value="4">Other</option>
+          </select>
+        </div>
+        <div class="col-md-8 offset-md-2 mb-3">
+          <div class="form-group">
+            <label for="questionForm">Enter your question below.</label>
+            <textarea
+              class="form-control"
+              id="questionFormText"
+              rows="12"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary my-1">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
