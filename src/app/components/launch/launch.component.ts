@@ -10,8 +10,6 @@ export class LaunchComponent implements OnInit {
   constructor(private fhirService: FhirService) {}
 
   ngOnInit(): void {
-    if (!this.fhirService.local) {
-      this.fhirService.getAuthorization();
-    }
+    this.fhirService.getAuthorization();
   }
 }

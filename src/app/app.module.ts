@@ -11,6 +11,8 @@ import { FooterComponent } from "@app/components/footer/footer.component";
 import { HeaderComponent } from "@app/components/header/header.component";
 import { HomeComponent } from "@app/components/home/home.component";
 import { LabResultsComponent } from "@app/components/lab-results/lab-results.component";
+import { LoginComponent } from "@app/components/login/login.component";
+import { NotRegisteredComponent } from "@app/components/not-registered/not-registered.component";
 import { PageNotFoundComponent } from "@app/components/page-not-found/page-not-found.component";
 import { PatientEducationComponent } from "@app/components/patient-education/patient-education.component";
 
@@ -24,6 +26,8 @@ import { PatientEducationComponent } from "@app/components/patient-education/pat
     HeaderComponent,
     HomeComponent,
     LabResultsComponent,
+    LoginComponent,
+    NotRegisteredComponent,
     PageNotFoundComponent,
     PatientEducationComponent,
   ],
