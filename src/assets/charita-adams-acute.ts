@@ -1,15 +1,15 @@
 export const charitaAdamsAcute = {
   careTeam: [
     {
-      picture: "",
-      name: "Gordon Freeman",
+      picture: "assets/colette-green.jpg",
+      name: "Colette Green",
       title: "Physician Assistant",
       specialty: "Physiatrists",
       biography:
-        "Dr. Freeman was born and raised in central Arkansas. He graduated with honors from Xavier University in New Orleans before returning to University of Arkansas Medical School to attend medical School. He completed his physiatrist internship and residency at UMS- Blair E. Batson Children’s Hospital.",
+        "Dr. Green was born and raised in central Arkansas. She graduated with honors from Xavier University in New Orleans before returning to University of Arkansas Medical School to attend medical School. She completed her physiatrist internship and residency at UMS- Blair E. Batson Children’s Hospital.",
     },
     {
-      picture: "",
+      picture: "assets/richard-keller.jpg",
       name: "Richard Keller",
       title: "General Doctor",
       specialty: "Pulmonologists",
