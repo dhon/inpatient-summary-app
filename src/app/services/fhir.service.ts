@@ -1,8 +1,12 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { charitaAdams, geoffreyAbbott, omarAbernathy } from "@assets/index";
+import {
+  charitaAdamsFhir,
+  geoffreyAbbottFhir,
+  omarAbernathyFhir,
+} from "@assets/index";
 import { oauth2 } from "fhirclient";
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
 
 @Injectable({
@@ -113,7 +117,7 @@ export class FhirService {
   getName() {
     return this.patient$.pipe(
       map((patient) => {
-        const data = this.local ? charitaAdams.patient : patient;
+        const data = this.local ? charitaAdamsFhir.patient : patient;
         return data?.name?.[0]?.given?.[0] + " " + data?.name?.[0]?.family;
       })
     );
@@ -122,7 +126,7 @@ export class FhirService {
   getLanguage() {
     return this.patient$.pipe(
       map((patient) => {
-        const data = this.local ? charitaAdams.patient : patient;
+        const data = this.local ? charitaAdamsFhir.patient : patient;
         return data?.communication?.[0]?.language?.text;
       })
     );
@@ -131,7 +135,7 @@ export class FhirService {
   getAddress() {
     return this.patient$.pipe(
       map((patient) => {
-        const data = this.local ? charitaAdams.patient : patient;
+        const data = this.local ? charitaAdamsFhir.patient : patient;
         return data?.address?.[0];
       })
     );
@@ -140,7 +144,7 @@ export class FhirService {
   getPhoneNumber() {
     return this.patient$.pipe(
       map((patient) => {
-        const data = this.local ? charitaAdams.patient : patient;
+        const data = this.local ? charitaAdamsFhir.patient : patient;
         return data?.telecom?.[0]?.value;
       })
     );
@@ -149,7 +153,7 @@ export class FhirService {
   getDateOfBirth() {
     return this.patient$.pipe(
       map((patient) => {
-        const data = this.local ? charitaAdams.patient : patient;
+        const data = this.local ? charitaAdamsFhir.patient : patient;
         return data?.birthDate;
       })
     );
@@ -158,7 +162,7 @@ export class FhirService {
   getGender() {
     return this.patient$.pipe(
       map((patient) => {
-        const data = this.local ? charitaAdams.patient : patient;
+        const data = this.local ? charitaAdamsFhir.patient : patient;
         return data?.gender;
       })
     );
@@ -168,7 +172,9 @@ export class FhirService {
     return this.observation$.pipe(
       map((observation) => {
         console.log(observation);
-        const data = this.local ? charitaAdams.observation?.entry : observation;
+        const data = this.local
+          ? charitaAdamsFhir.observation?.entry
+          : observation;
         const data2 = data?.find((entry) => {
           const data3 = this.local ? entry?.resource : entry;
           return data3?.code?.text === "Body Height";
@@ -187,7 +193,9 @@ export class FhirService {
     return this.observation$.pipe(
       map((observation) => {
         console.log(observation);
-        const data = this.local ? charitaAdams.observation?.entry : observation;
+        const data = this.local
+          ? charitaAdamsFhir.observation?.entry
+          : observation;
         const data2 = data?.find((entry) => {
           const data3 = this.local ? entry?.resource : entry;
           return data3?.code?.text === "Body Weight";
@@ -206,7 +214,7 @@ export class FhirService {
     return this.medicationRequest$.pipe(
       map((medicationRequest) => {
         const data = this.local
-          ? charitaAdams.medicationRequest?.entry
+          ? charitaAdamsFhir.medicationRequest?.entry
           : medicationRequest;
         return data?.map((entry) => {
           const data2 = this.local ? entry?.resource : entry;
