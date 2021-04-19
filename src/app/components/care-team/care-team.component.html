@@ -1,1 +1,31 @@
-<p>Care Team Component</p>
+<div class="grid-container">
+  <div class="card text-white text-center bg-dark mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Care team</h5>
+      <div>Your professional care team are ready to meet your needs.</div>
+    </div>
+  </div>
+</div>
+<div class="grid-container">
+  <div class="card-body" *ngFor="let doctor of careTeam">
+    <div class="card text-white text-center bg-dark mb-3">
+      <div class="row">
+        <div class="col-4 p-4">
+          <div class="card-header"></div>
+          <div>
+            <img class="img-responsive" [src]="doctor.picture" width="250" height="250">
+          </div>
+        </div>
+        <div class="col-8 p-4">
+          <div class="card-header">Biography</div>
+          <div class="text-left">
+            <div>Name: {{ doctor.name }}</div>
+            <div>Title: {{ doctor.title }}</div>
+            <div>Specialty: {{ doctor.specialty }}</div>
+            <div class="pt-4"> {{ doctor.biography }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

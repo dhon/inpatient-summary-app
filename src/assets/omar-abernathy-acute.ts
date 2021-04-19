@@ -1,15 +1,15 @@
 export const omarAbernathyAcute = {
   careTeam: [
     {
-      picture: "",
-      name: "Wallace Breen",
+      picture: "assets/gordon-freeman.jpg",
+      name: "Gordon Freeman",
       title: "Physician Assistant",
       specialty: "Neurologists",
       biography:
         "Is certified by the American Board of Psychiatry and Neurology. He completed a fellowship at Baylor College of Medicine. He earned his medical degree from the University of Kansas School of Medicine and completed his residency at the University of Kansas Medical Center.",
     },
     {
-      picture: "",
+      picture: "assets/richard-keller.jpg",
       name: "Richard Keller",
       title: "General Doctor",
       specialty: "Pulmonologists",
