@@ -14,7 +14,7 @@
     </button>
     <!-- TODO: Nav bar does not work on mobile -->
     <div class="navbar-collapse collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto" *ngIf="isLoggedIn$ | async">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/']"> Home </a>
         </li>

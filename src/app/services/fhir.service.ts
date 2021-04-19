@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { charitaAdams, geoffreyAbbott, omarAbernathy } from "@assets/index";
 import { oauth2 } from "fhirclient";
 import { BehaviorSubject, Observable } from "rxjs";
@@ -9,7 +10,13 @@ import { map } from "rxjs/operators";
 })
 export class FhirService {
   public local = false;
+  public patientIdSubject = new BehaviorSubject<string>(null);
   private smart = oauth2;
+  private registeredPatientIds = [
+    "bc6c8e2a-63de-4790-94af-fcab57874c21",
+    "2cda5aad-e409-4070-9a15-e1c35c46ed5a",
+    "80a75b5a-fd30-4f38-895d-d8098fe7206e",
+  ];
   private patientSubject = new BehaviorSubject<any>(null);
   private observationSubject = new BehaviorSubject<any>(null);
   private medicationRequestSubject = new BehaviorSubject<any>(null);
@@ -17,15 +24,37 @@ export class FhirService {
   private observation$ = this.observationSubject.asObservable();
   private medicationRequest$ = this.medicationRequestSubject.asObservable();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   getAuthorization() {
     // Init Auth
-    this.smart.authorize({
-      client_id: "my_web_app",
-      scope: "patient/*.read",
-      redirectUri: "/inpatient-summary-app",
-    });
+    if (this.local) {
+      this.router.navigate(["/login"]);
+    } else {
+      this.smart.authorize({
+        client_id: "my_web_app",
+        scope: "patient/*.read",
+        redirectUri: "/inpatient-summary-app/login",
+      });
+    }
+  }
+
+  setPatientId() {
+    if (!this.patientIdSubject.value) {
+      if (this.local) {
+        this.patientIdSubject.next(this.registeredPatientIds[0]);
+        this.router.navigate(["/"]);
+      } else {
+        this.smart.ready().then((client) => {
+          if (this.registeredPatientIds.includes(client.patient.id)) {
+            this.patientIdSubject.next(client.patient.id);
+            this.router.navigate(["/"]);
+          } else {
+            this.router.navigate(["/not-registered"]);
+          }
+        });
+      }
+    }
   }
 
   callAPIs() {
