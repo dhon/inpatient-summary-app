@@ -1,1 +1,44 @@
-<p>Not Registered Component</p>
+<div class="grid-container">
+  <div class="card text-white text-center bg-dark mb-3">
+    <div class="card-body">
+      <h5 class="card-title">You are not authenticated.</h5>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="!isLocal; else localVersion">
+  <div class="grid-container">
+    <div class="card text-white text-center bg-dark mb-3">
+      <div class="card-body">
+        Please login to this website via the Smart App Launcher using one of the
+        three approved PatientIDs.
+      </div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="card text-white text-center bg-dark mb-3">
+      <div class="card-body">
+        <a
+          href="https://launch.smarthealthit.org/?auth_error=&fhir_version_1=r4&fhir_version_2=r4&iss=&launch_ehr=1&launch_url=https%3A%2F%2Fdhon.github.io%2Finpatient-summary-app%2Flaunch&patient=bc6c8e2a-63de-4790-94af-fcab57874c21&prov_skip_auth=1&provider=&pt_skip_auth=1&public_key=&sb=&sde=&sim_ehr=0&token_lifetime=15&user_pt="
+          >Charita Adams</a
+        >,
+        <a
+          href="https://launch.smarthealthit.org/?auth_error=&fhir_version_1=r4&fhir_version_2=r4&iss=&launch_ehr=1&launch_url=https%3A%2F%2Fdhon.github.io%2Finpatient-summary-app%2Flaunch&patient=2cda5aad-e409-4070-9a15-e1c35c46ed5a&prov_skip_auth=1&provider=&pt_skip_auth=1&public_key=&sb=&sde=&sim_ehr=0&token_lifetime=15&user_pt="
+          >Geoffrey Abbott</a
+        >,
+        <a
+          href="https://launch.smarthealthit.org/?auth_error=&fhir_version_1=r4&fhir_version_2=r4&iss=&launch_ehr=1&launch_url=https%3A%2F%2Fdhon.github.io%2Finpatient-summary-app%2Flaunch&patient=80a75b5a-fd30-4f38-895d-d8098fe7206e&prov_skip_auth=1&provider=&pt_skip_auth=1&public_key=&sb=&sde=&sim_ehr=0&token_lifetime=15&user_pt="
+          >Omar AbernathyAcute</a
+        >
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #localVersion>
+  <div class="grid-container">
+    <div class="card text-white text-center bg-dark mb-3">
+      <div class="card-body">
+        Please authenticate via the header navigation bar.
+      </div>
+    </div>
+  </div>
+</ng-template>
