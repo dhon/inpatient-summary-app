@@ -12,6 +12,7 @@ import {
 export class PatientService {
   constructor(private fhirService: FhirService) {}
 
+  // API Request to Company Database
   getAcuteData() {
     if (
       this.fhirService.patientIdSubject.value ===
