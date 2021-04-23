@@ -8,33 +8,63 @@
     </div>
   </div>
 </div>
-<div class="grid-container">
+<div class="grid-container" [hidden]="isValidFormSubmitted">
   <div class="card text-white text-center bg-dark mb-3">
     <div class="card-body">
-      <h5 class="card-title">Enter your Question Here.</h5>
-      <form class="mt-2">
+      <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+        <div class="col-md-12">
+          <label for="topic"> Topic </label>
+        </div>
         <div class="col-md-4 offset-md-4 mb-3">
-          <select class="custom-select" required>
-            <option selected>Select a Topic</option>
-            <option value="1">Care</option>
-            <option value="2">Doctor</option>
-            <option value="3">Facility</option>
-            <option value="4">Other</option>
+          <select
+            class="form-control"
+            id="topic"
+            name="topic"
+            formControlName="topic"
+          >
+            <option *ngFor="let topic of topics" [value]="topic">
+              {{ topic }}
+            </option>
           </select>
         </div>
-        <div class="col-md-8 offset-md-2 mb-3">
-          <div class="form-group">
-            <label for="questionForm">Enter your question below.</label>
-            <textarea
-              class="form-control"
-              id="questionFormText"
-              rows="12"
-              required
-            ></textarea>
-          </div>
+        <div class="col-md-12">
+          <label for="email"> Email address </label>
         </div>
-        <button type="submit" class="btn btn-primary my-1">Submit</button>
+        <div class="col-md-6 offset-md-3 mb-3">
+          <input
+            class="form-control"
+            type="text"
+            id="email"
+            name="email"
+            formControlName="email"
+          />
+        </div>
+        <div class="col-md-12">
+          <label for="question"> Question </label>
+        </div>
+        <div class="col-md-8 offset-md-2 mb-3">
+          <textarea
+            class="form-control"
+            rows="12"
+            id="question"
+            name="question"
+            formControlName="question"
+          ></textarea>
+        </div>
+        <button type="submit" [disabled]="!questionForm.valid">Submit</button>
       </form>
+    </div>
+  </div>
+</div>
+<div class="grid-container" [hidden]="!isValidFormSubmitted">
+  <div class="card text-white text-center bg-dark mb-3">
+    <div class="card-body">
+      <div>
+        <h4>
+          <div>Thank you. Your question has been submitted.</div>
+          <div>We will reach out to you in a few business days.</div>
+        </h4>
+      </div>
     </div>
   </div>
 </div>
