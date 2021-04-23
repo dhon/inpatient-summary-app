@@ -9,4 +9,5 @@ import { FhirService } from "@app/services";
 export class HeaderComponent {
   constructor(private fhirService: FhirService) {}
   public isLoggedIn$ = this.fhirService.patientIdSubject.asObservable();
+  public isLocal = this.fhirService.local;
 }

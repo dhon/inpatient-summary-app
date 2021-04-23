@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { FhirService } from "@app/services";
 
 @Component({
   selector: "app-not-registered",
@@ -6,5 +7,6 @@ import { Component } from "@angular/core";
   styleUrls: ["./not-registered.component.scss"],
 })
 export class NotRegisteredComponent {
-  constructor() {}
+  constructor(private fhirService: FhirService) {}
+  public isLocal = this.fhirService.local;
 }

@@ -13,7 +13,7 @@ import { map } from "rxjs/operators";
   providedIn: "root",
 })
 export class FhirService {
-  public local = false;
+  public local = window.location.href.includes('localhost');
   public patientIdSubject = new BehaviorSubject<string>(null);
   private smart = oauth2;
   private registeredPatientIds = [
