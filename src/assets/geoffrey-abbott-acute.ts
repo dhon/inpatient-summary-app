@@ -17,7 +17,12 @@ export const geoffreyAbbottAcute = {
         "Richard Keller received his training at LeBonheur Children's Medical Center, University of Tennessee, Memphis. He has been serving the Mississippi Gulf Coast for the past two decades. He has served as the Chief of Pediatrics at Merit Health, Biloxi and Ocean Springs Hospital. Keller is board-certified and a Fellow of the American Academy of Pediatrics.",
     },
   ],
-  labResults: [],
+  labResults: [
+    {
+      fileName: "broken-leg",
+      link: "assets/geoffrey-abbott-broken-leg.jpg"
+    },
+],
   patientEducation: {
     diagnosis: "Broken Leg",
   },

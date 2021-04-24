@@ -1,1 +1,9 @@
-<p>Lab Results Component</p>
+<div class="card text-white text-center bg-dark mb-3">
+  <div class="card-body">
+    <h5 class="card-title">Lab Results</h5>
+  </div>
+  <div class="card-header">Downloads</div>
+  <div *ngFor="let docs of labResults">
+    <h5><a [download]="docs.fileName" [href]="docs.link">Link</a></h5>
+  </div>
+</div>
