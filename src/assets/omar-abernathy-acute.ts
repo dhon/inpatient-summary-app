@@ -21,6 +21,8 @@ export const omarAbernathyAcute = {
     {
       fileName: "mri-concussion",
       link: "assets/omar-abernathy-mri-concussion.jpq",
+      dateCreated: "4/20/2021",
+      description:"MRI scan of patient after head trauma from falling debris.",
     },
   ],
   patientEducation: {

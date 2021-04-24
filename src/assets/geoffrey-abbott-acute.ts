@@ -20,7 +20,9 @@ export const geoffreyAbbottAcute = {
   labResults: [
     {
       fileName: "broken-leg",
-      link: "assets/geoffrey-abbott-broken-leg.jpg"
+      link: "assets/geoffrey-abbott-broken-leg.jpg",
+      dateCreated: "4/10/2021",
+      description: "X ray of leg from falling down a flight of stairs."
     },
 ],
   patientEducation: {
