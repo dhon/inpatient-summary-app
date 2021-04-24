@@ -1,9 +1,11 @@
-<div class="card text-white text-center bg-dark mb-3">
+<div class="card text-white text-center bg-dark pb-3">
   <div class="card-body">
     <h5 class="card-title">Lab Results</h5>
   </div>
-  <div class="card-header">Downloads</div>
+  <div class="card-header">Files</div>
   <div *ngFor="let docs of labResults">
-    <h5><a [download]="docs.fileName" [href]="docs.link">Link</a></h5>
+    <h4>{{ docs.dateCreated }}</h4>
+    <h5 class="mb-0">{{ docs.fileName }} <a [download]="docs.fileName" [href]="docs.link">Download</a></h5>
+    <div>{{ docs.description }}</div>
   </div>
 </div>
