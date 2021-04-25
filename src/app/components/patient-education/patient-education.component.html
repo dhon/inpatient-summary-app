@@ -1,1 +1,32 @@
-<p>Patient Education Component</p>
+<div class="grid-container">
+  <div class="card text-white text-center bg-dark mb-2">
+    <div class="card-body">
+      <h5 class="card-title">Patient Education</h5>
+      <div>Includes doctors' notes about specific visit.</div>
+    </div>
+  </div>
+</div>
+<div class="grid-container">
+  <div class="card text-white text-left bg-dark mb-2">
+    <div class="card-header">Doctors' Notes</div>
+    <div li class="card-body">
+      <div *ngFor="let note of patientEducation.notes">
+        <li>{{ note }}</li>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid-container">
+  <div class="card text-white text-left bg-dark mb-2">
+    <div class="card-header">Reason for Visit</div>
+    <div class="card-body">
+      <div>
+        {{ patientEducation.diagnosis }} -
+        <a href="{{ patientEducation.website }}" class="link-primary">
+          More Information (WebMD)
+        </a>
+        <div class="pt-2"><iframe class="bg-white" width="600" height="400" [src]="safeUrl"></iframe></div>
+      </div>
+    </div>
+  </div>
+</div>
