@@ -22,10 +22,16 @@ export const charitaAdamsAcute = {
       fileName: "asthma-chart",
       link: "assets/charita-adams-asthma-chart.jpg",
       dateCreated: "3/15/2021",
-      description: "Oxygen levels of patient after patient suffered a mild asthma attack.",
+      description:
+        "Oxygen levels of patient after patient suffered a mild asthma attack.",
     },
   ],
   patientEducation: {
     diagnosis: "Asthma Attack",
+    website: "https://www.webmd.com/asthma/asthma-attack",
+    notes: [
+      "Ensure inhaler is nearby.",
+      "Be cognisant of asthma attack symptoms. Ex. wheezing, coughing, and tightness of chest.",
+    ],
   },
 };

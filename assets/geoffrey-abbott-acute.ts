@@ -22,10 +22,15 @@ export const geoffreyAbbottAcute = {
       fileName: "broken-leg",
       link: "assets/geoffrey-abbott-broken-leg.jpg",
       dateCreated: "4/10/2021",
-      description: "X ray of leg from falling down a flight of stairs."
+      description: "X ray of leg from falling down a flight of stairs.",
     },
-],
+  ],
   patientEducation: {
     diagnosis: "Broken Leg",
+    website: "https://www.webmd.com/first-aid/broken-leg",
+    notes: [
+      "Stay off leg for 3 months.",
+      "After 3 months, patient must use a crutch until follow-on appointment.",
+    ],
   },
 };
