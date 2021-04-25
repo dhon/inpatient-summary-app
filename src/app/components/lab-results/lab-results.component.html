@@ -1,11 +1,21 @@
-<div class="card text-white text-center bg-dark pb-3">
-  <div class="card-body">
-    <h5 class="card-title">Lab Results</h5>
+<div class="grid-container">
+  <div class="card text-white text-center bg-dark mb-2">
+    <div class="card-body">
+      <h5 class="card-title">Lab Results</h5>
+    </div>
   </div>
-  <div class="card-header">Files</div>
-  <div *ngFor="let docs of labResults">
-    <h4>{{ docs.dateCreated }}</h4>
-    <h5 class="mb-0">{{ docs.fileName }} <a [download]="docs.fileName" [href]="docs.link">Download</a></h5>
-    <div>{{ docs.description }}</div>
+</div>
+
+<div class="grid-container">
+  <div class="card text-white text-center bg-dark mb-2 pb-2">
+    <div class="card-header">Files</div>
+    <div *ngFor="let docs of labResults">
+      <h4 class="pt-2">{{ docs.dateCreated }}</h4>
+      <h5 class="mb-0">
+        {{ docs.fileName }}
+        <a [download]="docs.fileName" [href]="docs.link">Download</a>
+      </h5>
+      <div>{{ docs.description }}</div>
+    </div>
   </div>
 </div>
