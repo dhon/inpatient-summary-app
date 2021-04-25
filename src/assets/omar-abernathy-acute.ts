@@ -22,10 +22,16 @@ export const omarAbernathyAcute = {
       fileName: "mri-concussion",
       link: "assets/omar-abernathy-mri-concussion.jpq",
       dateCreated: "4/20/2021",
-      description:"MRI scan of patient after head trauma from falling debris.",
+      description: "MRI scan of patient after head trauma from falling debris.",
     },
   ],
   patientEducation: {
     diagnosis: "Concussion",
+    website:
+      "https://www.webmd.com/brain/concussion-traumatic-brain-injury-symptoms-causes-treatments",
+    notes: [
+      "Be aware of the surrondings that might be dangerous.",
+      "Ensure proper protective equipment is used when engaging in high-risk activities.",
+    ],
   },
 };
